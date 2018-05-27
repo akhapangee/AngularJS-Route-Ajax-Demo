@@ -1,0 +1,18 @@
+<div class="panel panel-default">
+    <div class="panel-heading">Calculator</div>
+    <div class="panel-body">
+        <h3>Angular JS Expressions</h3>
+       <h2>2+3 => {{2+3}}</h2>
+       <h2>2<3 => {{2<3}}</h2>
+
+       <h3>Colors (Using *ngFor loop and some filters like uppercase, lowercase)</h3>
+       <ul>
+           <li *ngFor="let c of colors">{{c|uppercase}}</li>
+       </ul>
+       <div>
+           <h1>Dynamically add color</h1>
+           <input type="text" [(ngModel)] = "color"/>
+           <button type="button" (click)="addColor()">Add color</button>
+       </div>
+    </div>
+</div>

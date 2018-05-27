@@ -1,0 +1,17 @@
+[
+    {
+        "id":"1",
+        "name":"Hari",
+        "status":"1"
+    },
+    {
+        "id":"2",
+        "name":"Shyam",
+        "status":"0"
+    },
+    {
+        "id":"3",
+        "name":"Gore",
+        "status":"1"
+    }
+]

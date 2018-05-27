@@ -1,0 +1,26 @@
+Then install the Angular CLI globally.
+npm install -g @angular/cli
+
+Create new project
+ng new my-app
+
+ng help
+cd PROJECT-NAME
+
+To run app
+Go to angular app
+ng serve
+
+
+to read
+Angular observables
+rx js
+
+*********************************************
+generate coponent commands
+$ ng generate component components/studentdetail
+CREATE src/app/components/studentdetail/studentdetail.component.html (32 bytes)
+CREATE src/app/components/studentdetail/studentdetail.component.spec.ts (677 bytes)
+CREATE src/app/components/studentdetail/studentdetail.component.ts (297 bytes)
+CREATE src/app/components/studentdetail/studentdetail.component.css (0 bytes)
+UPDATE src/app/app.module.ts (978 bytes)
