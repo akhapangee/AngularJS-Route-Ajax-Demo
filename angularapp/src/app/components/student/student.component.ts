@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Student } from "../../models/Student";
 import { IStudentService, StudentService } from "../../services/StudentService";
+import { HttpClient } from "@angular/common/http";
 
 @Component({
     selector: 'student',
@@ -8,32 +9,15 @@ import { IStudentService, StudentService } from "../../services/StudentService";
     providers:[StudentService]
 })
 export class StudentComponent implements OnInit {
-    students: Array<Student> = null;
+    students;
     studentService: StudentService;
 
-    public constructor(studentService:StudentService){
+    public constructor(studentService:StudentService,private http:HttpClient){
         this.studentService = studentService;
     }
     ngOnInit(): void {
-        var student: Student = new Student();
-
-        student.setId(1);
-        student.setName("Gita");
-        student.setStatus(true);
-        this.studentService.insert(student);
-
-        var student: Student = new Student();
-        student.setId(2);
-        student.setName("Ramesh");
-        student.setStatus(true);
-        this.studentService.insert(student);
-
-        var student: Student = new Student();
-        student.setId(3);
-        student.setName("Hari");
-        student.setStatus(false);
-        this.studentService.insert(student);
-
-        this.students = this.studentService.getAll();
+       this.http.get('/data/students.json').subscribe(data=>{
+           this.students = data;
+       });
     }
 }

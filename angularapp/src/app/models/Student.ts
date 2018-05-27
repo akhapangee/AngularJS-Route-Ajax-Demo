@@ -1,4 +1,4 @@
-export class Student {
+export class Student  {
     private id: number;
     private name: string;
     private status: boolean;
@@ -25,6 +25,6 @@ export class Student {
     public getStatus(): boolean {
         return this.status;
     }
-   
-    
+
+
 }

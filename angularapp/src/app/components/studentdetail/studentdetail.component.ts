@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Student } from 'src/app/models/Student';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-studentdetail',
@@ -6,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./studentdetail.component.css']
 })
 export class StudentdetailComponent implements OnInit {
-
-  constructor() { }
+  student: Student = new Student();
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
+    this.http.get<Student>("/data/student.detail.json").subscribe(data => {
+      this.student = data;
+    });
   }
 
 }
